@@ -1,3 +1,3 @@
 Dawid Bosy
-nr indeksu: 145396
-dawid.bosy@student.put.poznan.pl
+Projekt dotyczył przedmiotu Programowanie Obiektowe - wykonywany był na 2 roku.
+Celem było utworzeniu gry platformowej opierającej się na definicjach klasowych.
