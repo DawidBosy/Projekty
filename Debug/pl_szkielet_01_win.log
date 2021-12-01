@@ -1,0 +1,15 @@
+﻿  main_file.cpp
+C:\Users\Dawid\Downloads\ChessProject\main_file.cpp(186,12): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Dawid\Downloads\ChessProject\main_file.cpp(187,12): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Dawid\Downloads\ChessProject\main_file.cpp(191,18): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Dawid\Downloads\ChessProject\main_file.cpp(192,19): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Dawid\Downloads\ChessProject\main_file.cpp(193,11): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Dawid\Downloads\ChessProject\main_file.cpp(194,11): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Dawid\Downloads\ChessProject\main_file.cpp(251,23): warning C4305: "=": obcięcie z "double" do "float"
+C:\Users\Dawid\Downloads\ChessProject\main_file.cpp(253,23): warning C4305: "=": obcięcie z "double" do "float"
+C:\Users\Dawid\Downloads\ChessProject\main_file.cpp(255,22): warning C4305: "=": obcięcie z "double" do "float"
+C:\Users\Dawid\Downloads\ChessProject\main_file.cpp(257,22): warning C4305: "=": obcięcie z "double" do "float"
+C:\Users\Dawid\Downloads\ChessProject\main_file.cpp(371,20): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Dawid\Downloads\ChessProject\main_file.cpp(373,22): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Dawid\Downloads\ChessProject\main_file.cpp(656,29): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+  pl_szkielet_01_win.vcxproj -> C:\Users\Dawid\Downloads\ChessProject\Debug\pl_szkielet_01_win.exe
