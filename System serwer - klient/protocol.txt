@@ -1,0 +1,17 @@
+Protokół komunikacji:
+Dla każdego użytkownika, serwer tworzy 2 kanały komunikacji, do odbierania od niego i wysyłania mu wiadomości,
+na podstawie podanego identyfikatora. Serwer przechowuje także informacje w pamięci współdzielonej o tym, które
+typy są subskrybowane, i w jaki sposób (w jednej liście int'ów liczba oznacza na jaką liczbę wiadomości
+jest subskrybowany kanał, bądź -1, jeżeli subskrypcja jest ciągła), oraz w jaki sposób są odczytywane
+wiadomości danego typu (w drugiej liście 1 oznacza asynchroniczny, natomiast 0 synchroniczny). Dla obu list
+indeks oznacza numer typu. Dla każdego typu asynchronicznego, w nieskończonej pętli kliet sprawdza, czy zostały 
+otrzymane wiadmości danego typu - jeżeli tak, niezwłocznie wyświetla je na ekranie. W przypadku typu synchronicznego,
+należy samemu sprawdzić czy dana wiadomość została otrzymana używając funkcji read (jest ona blokująca). 
+Gdy klient wyśle wiadomość za pomocą operacji send, serwer odbiera ją z dedykowanego kanału, a następnie wysyła
+do wszystkich klientów subskrybujących dany typ. Wysyłana wiadomość jest ciągiem znaków, kończącym się po
+znaku spacji. Klient również otrzymuje wiadomości, które sam wysłał. Liczba podana jako ilość wiadomości, którą klient
+chciał odebrać, zmniejsza się tylko w przypadku odczytania wiadomości, a nie wysyłania. Jeżeli liczba ta
+osiągnie 0, typ przestaje być subskrybowany. Do rejestrowania użytkowników wykorzystywany jest wspólny kanał - 
+w przypadku chęci rejestracji dwóch użytkowników jednocześnie, serwer najpierw przeprowadzi pełną rejestrację z pierwszym,
+po czym zacznie logować drugiego. Do wylogowania użytkowników bądź zmiany subskrybowanych typów są zarezerwowane
+osobne typy wiadomości, w celu uniknięcia błędów komunikacji.

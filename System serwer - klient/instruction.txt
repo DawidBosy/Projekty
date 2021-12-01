@@ -1,0 +1,22 @@
+1. Kompilacja
+W celu kompilacji, należy uruchomić komendy:
+gcc inf145396_s.c -o server.out
+gcc inf145396_k.c -o klient.out
+2. Uruchomienie
+By uruchomić projekt, należy w jednym oknie poleceń uruchomić plik wyjściowy server.out:
+./server.out
+A następnie, w kolejnych oknach uruchomić kolejnych klientów:
+./klient.out
+3. Opis zawartości
+3.1 Plik serwerowy
+Uruchomienie pliku tworzy trzy procesy działające współbieżnie. Są one odpowiedzialne za rejestrowanie nowych 
+użytkowników, zmianę subskrybowanych kanałów użytkownika lub jego opuszczenie serwera, bądź też odbieranie
+wiadomości i wysyłanie ich pozostałym użytkownikom subskrybującym dany kanał. Serwer wyświetla w swoim oknie
+poleceń kolejne zmiany następujące w serwerze, takie jak dołączenie nowych użytkowników czy nowy komunikat.
+Sam serwer posiada tylko jedną funkcję exit, kończącą wszystkie procesy serwera.
+3.2 Plik klienta
+Po uruchomieniu klienta, użytkownik zostanie zapytany o podanie swojej nazwa, a następnie identyfikatora.
+Po ich podaniu następuje prośba o wybranie subskrypowanego typu wiadomości, następnie określenie stałości subskrypcji,
+oraz jej asynchroniczność. W kolejnym kroku użytkownik uzyskuje dostęp do 4 operacji - send, by wysłać wiadomość do wybranego typu,
+read, by odczytać wiadomość z subskrybowanego kanału synchronicznego, change, w celu zmiany stałości i synchroniczności
+subskrybcji, oraz exit, w celu opuszczenia serwera i zamknięcie programu.
