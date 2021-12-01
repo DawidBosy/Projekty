@@ -1,4 +1,0 @@
-C:\Users\Dawid\Downloads\pl_szkielet_01_win\Debug\pl_szkielet_01_win.exe
-C:\Users\Dawid\Downloads\pl_szkielet_01_win\Debug\pl_szkielet_01_win.pdb
-C:\Users\Dawid\Downloads\ChessProject\Debug\pl_szkielet_01_win.exe
-C:\Users\Dawid\Downloads\ChessProject\Debug\pl_szkielet_01_win.pdb
