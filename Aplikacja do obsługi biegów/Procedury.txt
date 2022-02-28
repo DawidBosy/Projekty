@@ -1,0 +1,74 @@
+
+----------------------------------------------------
+DECLARE
+CURSOR curs IS SELECT * FROM UCZESTNICTWO ORDER BY CZAS desc;
+----------OBLICZENIE MIEJSCA------------------------
+BEGIN
+OPEN curs;
+CREATE OR REPLACE PROCEDURE CalculatePlace
+(runID IN NUMBER)
+vCounter NUMBER;
+vUczestnictwo UCZESTNICTWO%ROWTYPE;
+IS 
+BEGIN
+vCounter := 1
+LOOP
+    FETCH curs INTO vUczestnictwo
+    EXIT WHEN curs%NOTFOUND;
+    IF vUczestnictwo.BIEG_ID_BIEGU = runID THEN
+        UPDATE UCZESTNICTWO SET ZAJETE_MIEJSCE = vCounter WHERE CZAS = vUczestnictwo.CZAS;
+        vCounter := vCounter+1;
+    END IF;
+END CalculatePlace;
+-------------ZLICZANIE UCZESTNIKÓW WYDARZENIA-----
+CREATE OR REPLACE FUNCTION CountParticipants
+(eventID IN NUMBER)
+RETURN NATURAL IS
+vCounter NATURAL;
+BEGIN
+    SELECT COUNT(*) INTO vCounter FROM (SELECT * FROM BIEG WHERE WYDARZENIE_ID_WYDARZENIA = eventID);
+END CountParticipants;
+    
+---------------DODANIE ZAWODNIKA------------------
+CREATE OR REPLACE PROCEDURE AddRunner
+(pracPesel IN NUMBER,
+pracFirstName IN VARCHAR,
+pracName IN VARCHAR,
+pracSex IN VARCHAR,
+pracBirth IN DATE,
+pracPhoneNumber IN NUMBER,
+pracStreet IN VARCHAR,
+pracAdress IN VARCHAR,
+runHeight IN NUMBER,
+runWeight IN NUMBER) IS
+BEGIN
+INSERT INTO RUNNERS (Pesel,FirstName,Name,Sex,PhoneNumber,Street,Adress,runHeight,runWeight)
+VALUES (pracPesel,pracFirstName,pracName,pracSex,pracPhoneNumber,pracStreet,pracAdress,runHeight,runWeight);
+END addRunner;
+----------------------------------------------------
+
+------------DODANIE BIEGU---------------------------
+CREATE OR REPLACE PROCEDURE AddRun
+(runID IN NUMBER,
+runDistance IN NUMBER,
+runType IN VARCHAR,
+runDate IN DATE) IS
+BEGIN
+INSERT INTO RUNS (ID,Distance,Typ,Data)
+VALUES (runID,runDistance,runType,runDate);
+END AddRun;
+----------------------------------------------------
+
+-------------DODANIE WYDARZENIA---------------------
+CREATE OR REPLACE PROCEDURE AddEvent
+(eventID IN NUMBER,
+eventName IN VARCHAR,
+eventAdmin IN VARCHAR,
+eventDate IN DATE) IS
+BEGIN
+INSERT INTO Events (ID,Name,Admin,Data)
+VALUES (runID,runDistance,runType,runDate);
+END AddEvent;
+
+
+END;

@@ -1,0 +1,13 @@
+Database: RunEventApp
+
+--Użytkownik tylko do tworzenia innych użytkowników
+user: creatingUser
+pwd: creation
+
+--Admin - wszystkie dostępne przywileje
+adminUser: Admin
+pwd: adminIsGod
+
+--Przykładowy użytkownik - ma dostęp do zmiany swojego profilu, stworzenia klubu i wyświetlenia wzystkich tabel
+usualUser: 10050070090 (pesel)
+pwd: jakieslatwe

@@ -1,0 +1,6 @@
+HOST='25.46.74.165'
+DATABASE='RunEventApp'
+ADMIN_NAME='Admin'
+ADMIN_PASSWORD='adminIsGod'
+CREATOR_NAME='creatingUser'
+CREATOR_PASSWORD='creation'

@@ -1,0 +1,6 @@
+EMPTY_FIELDS_MSG = 'Żadne z pól nie może zostać puste'
+DATABASE_ERROR_MSG = 'Błąd połączenia z bazą danych'
+INSERT_ERROR_MSG = 'Nie mozna wstawic rekordu do tabeli'
+MODIFY_ERROR_MSG = 'Nie mozna zmodyfikować rekordu w tabeli'
+MODIFY_WARNING_MSG = 'Wartości nie zostały zmienione'
+DELETE_ERROR_MSG = 'Nie mozna usunąć rekordu z tabeli'
