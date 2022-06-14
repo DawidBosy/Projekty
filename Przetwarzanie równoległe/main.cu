@@ -49,7 +49,7 @@ int main(){
     int problemNum = 6000;
     int arrayLength = 50;
     float result;
-   int threads = 4;
+    int threads = 4;
     srand(time(NULL));
     int startTime = time(NULL);
 
