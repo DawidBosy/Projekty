@@ -49,6 +49,7 @@ int main(){
     int problemNum = 6000;
     int arrayLength = 50;
     float result;
+   int threads = 4;
     srand(time(NULL));
     int startTime = time(NULL);
 
@@ -68,7 +69,7 @@ int main(){
     cudaMemcpy(d_numbers, &numbers, sizeof(int)*arrayLength, cudaMemcpyHostToDevice);
 
     // Executing kernel 
-    CudaRun<<<1,1>>>(problemNum,arrayLength,d_numbers,d_result);
+    CudaRun<<<1,threads>>>(problemNum/threads,arrayLength,d_numbers,d_result);
     
     // Transfer data back to host memory
     cudaMemcpy(&result, d_result, sizeof(float), cudaMemcpyDeviceToHost);
